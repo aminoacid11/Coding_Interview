@@ -1,11 +1,13 @@
 import numpy as np
+import math
 import matplotlib.pyplot as plt 
 
 def obj(x):
-    return x**4-14*x**3+60*x**2-70*x
+    # return x**4-14*x**3+60*x**2-70*x
+    return x**2 + 4*math.cos(x)
 
 def grad(x):
-    return 4*x**3-42*x**2+120*x-70
+    return 2*x - 4*math.sin(x)
 
 def bisection(a0,b0):
     if a0>b0:
@@ -113,9 +115,8 @@ def bisection(a0,b0):
 #=====================Change the parameters here======================
 #try different a0,b0
 
-a0,b0=[-1,8] # global minimum
+a0,b0=[1,2] # global minimum
 #a0,b0=[0,8] # local minimum
 #a0,b0=[7,8] # not inside
 
 bisection(a0,b0)
-        
