@@ -3,7 +3,6 @@ import math
 import matplotlib.pyplot as plt 
 
 def obj(x):
-    # return x**4-14*x**3+60*x**2-70*x
     return x**2 + 4*math.cos(x)
 
 def grad(x):
@@ -76,17 +75,6 @@ def bisection(a0,b0):
         ax1=fig1.add_subplot()
         ax1.plot(xplot,fplot,'k-',linewidth='3',label="Objective function")
 
-#         for ja in range(len(a_all)):
-#             if ja==0:
-#                 ax1.plot([a_all[ja],a_all[ja]],[-1000,1000],'bo-',linewidth='1',label="a")
-#             else:
-#                 ax1.plot([a_all[ja],a_all[ja]],[-1000,1000],'bo-',linewidth='1')
-#         for jb in range(len(b_all)):
-#             if jb==0:
-#                 ax1.plot([b_all[jb],b_all[jb]],[-1000,1000],'ro-',linewidth='1',label="b")
-#             else:
-#                 ax1.plot([b_all[jb],b_all[jb]],[-1000,1000],'ro-',linewidth='1')
-
         for ja in range(len(a_all)):
             if ja==0:         
                 ax1.plot([a_all[ja],b_all[ja]],[min(fplot)+(max(fplot)-min(fplot))*(0.2+0.6*((len(a_all)-ja)/len(a_all))),min(fplot)+(max(fplot)-min(fplot))*(0.2+0.6*((len(a_all)-ja)/len(a_all)))],'--',color="gray",linewidth='2',alpha=1,label="Interval")
@@ -113,10 +101,7 @@ def bisection(a0,b0):
     #return 0
     
 #=====================Change the parameters here======================
-#try different a0,b0
 
-a0,b0=[1,2] # global minimum
-#a0,b0=[0,8] # local minimum
-#a0,b0=[7,8] # not inside
+a0,b0=[1,2] 
 
 bisection(a0,b0)
